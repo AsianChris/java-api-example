@@ -22,3 +22,4 @@ The work here is based on a few documents
 * [Jersey](https://jersey.java.net)
 * [Authentication Filter](http://stackoverflow.com/a/26778123)
 * [Exception Handling](http://stackoverflow.com/a/23858695)
+* [Specific Exceptions](https://jersey.java.net/documentation/latest/representations.html#d0e6653)
