@@ -12,6 +12,7 @@ import java.io.IOException;
 import com.example.api.Notation.Secured;
 import com.example.api.Response.NotAuthorizedResponse;
 import com.example.api.Exception.NotAuthorizedException;
+import com.example.api.Util.Authentication;
 
 /**
  * Authentication Filter
@@ -47,27 +48,11 @@ public class AuthenticationFilter implements ContainerRequestFilter {
         String token = authorizationHeader.substring("Bearer".length()).trim();
 
         try {
-            // Validate the token
-            validateToken(token);
 
-        } catch (Exception e) {
-          throw new NotAuthorizedException("Invalid Credentials");
-        }
-    }
+            Authentication.verifyToken(token);
 
-    /**
-     * Validate Token
-     *
-     * For this example, we're just checking to see to the token is "token"
-     *
-     * @param token Token string to be validated
-     *
-     * @throws Exception
-     */
-    private void validateToken(String token) throws Exception {
-        // Throw an Exception if the token is invalid
-        if(! new String("token").equals(token) ) {
-            throw new Exception("UNAUTHORIZED");
+        } catch (NotAuthorizedException ex) {
+            throw ex;
         }
     }
 }
