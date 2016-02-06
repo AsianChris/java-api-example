@@ -30,12 +30,14 @@ public class Authentication {
      * @throws NotAuthorizedException
      */
     public static User verifyUser(String username, String password) throws NotAuthorizedException {
-        // For Demo Purposes only
+        // For Demo Purposes only. Should be authenticating against a user data store
+        // - for example, testing against a user database in mysql
         if( ! new String("username").equals(username) || ! new String("password").equals(password) ) {
           throw new NotAuthorizedException("Invalid Credentials");
         }
 
         // For Demo Purposes only
+        // Creating a test user
         User user = new User();
         user.setName("Bob");
         user.setAge(21);
@@ -49,8 +51,8 @@ public class Authentication {
      * @param user
      */
     public static String createToken(User user) {
-        // For Demo Purposes Only
         // Can include other data into JWT
+        // Just sending the User's name back for now
         String token = Jwts.builder().setSubject( user.getName() ).signWith(SignatureAlgorithm.HS512, apiKey).compact();
 
         return token;
