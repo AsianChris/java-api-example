@@ -6,12 +6,12 @@ import javax.ws.rs.container.ContainerRequestFilter;
 import javax.ws.rs.container.ContainerRequestContext;
 import javax.ws.rs.Priorities;
 import javax.ws.rs.core.HttpHeaders;
-import javax.ws.rs.NotAuthorizedException;
 import javax.ws.rs.core.Response;
 import java.io.IOException;
 
 import com.example.api.Notation.Secured;
 import com.example.api.Response.NotAuthorizedResponse;
+import com.example.api.Exception.NotAuthorizedException;
 
 /**
  * Authentication Filter

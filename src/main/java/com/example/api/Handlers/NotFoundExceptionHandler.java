@@ -11,6 +11,8 @@ import com.example.api.Response.NotFoundResponse;
 /**
  * Not Found Exception Handler
  *
+ * This is the catch all for 404 Responses
+ *
  * Based on http://stackoverflow.com/a/23858695
  */
 @Provider

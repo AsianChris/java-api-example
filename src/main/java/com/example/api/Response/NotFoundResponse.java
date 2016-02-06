@@ -14,6 +14,19 @@ public class NotFoundResponse{
   /**
    * Message
    */
-  public final String message = "Not Found";
+  public String message = "Not Found";
 
+  /**
+   * Class Constructor
+   */
+  public NotFoundResponse() {}
+
+  /**
+   * Class Constructor
+   *
+   * @param message Not Auth Message
+   */
+  public NotFoundResponse(String message) {
+      this.message = message;
+  }
 }
